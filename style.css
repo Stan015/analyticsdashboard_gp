@@ -1,0 +1,45 @@
+:root {
+    --clr-primary: #141414;
+    --clr-secondary: #FFFFFF;
+    --clr-action: #FFFFFF;
+    --clr-inline_text: #005AE2;
+
+    --bg-action: #0065FE;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    color: var(--clr-primary);
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+::before, ::after {
+box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    background-color: #FFFFFF;    
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    line-height: 1.5rem;
+}
+
+button {
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+    /* text-align: center; */
+}
