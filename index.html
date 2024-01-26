@@ -17,11 +17,11 @@
             <div class="general_navs_div">
                 <nav class="primary_nav">
                     <a href="index.html" aria-labelledby="dashboard" aria-current="true" class="active_link"><img src="icons/dashboard.svg" alt="dashboard icon" /></a>
-                    <a href="#" aria-labelledby="trend"><img src="icons/trend_up.svg" alt="trend icon" /></a>
-                    <a href="#" aria-labelledby="user profile"><img src="icons/profile_2user.svg" alt="profile icon" /></a>
-                    <a href="#" aria-labelledby=""><img src="icons/box.svg" alt="box icon" /></a>
-                    <a href="#" aria-labelledby="discount"><img src="icons/discount_shape.svg" alt="discount icon" /></a>
-                    <a href="#" aria-labelledby="info"><img src="icons/info_circle.svg" alt="info icon" /></a>
+                    <a href="#trends" aria-labelledby="trend"><img src="icons/trend_up.svg" alt="trend icon" /></a>
+                    <a href="#profile" aria-labelledby="user profile"><img src="icons/profile_2user.svg" alt="profile icon" /></a>
+                    <a href="#box_to_be_named" aria-labelledby=""><img src="icons/box.svg" alt="box icon" /></a>
+                    <a href="#to_be_named" aria-labelledby="discount"><img src="icons/discount_shape.svg" alt="discount icon" /></a>
+                    <a href="#info" aria-labelledby="info"><img src="icons/info_circle.svg" alt="info icon" /></a>
                     <div class="theme_color">
                         <button type="button" aria-labelledby="light theme" aria-current="true"><img src="icons/brightness_1.svg" alt="brightness icon" /></button>
                         <button type="button" aria-labelledby="dark theme"><img src="icons/moon_1.svg" alt="moon icon" /></button>
@@ -64,7 +64,7 @@
             </div>
         </section>
 
-        <section class="main_contents">
+        <section class="contents_container dashboard" id="dashboard" aria-hidden="false">
             <div class="bar_chart_div">
                 <div class="chart_title">
                     <h2>Sales Trends</h2>
@@ -80,8 +80,8 @@
                     </div>
                 </div>
 
-                <div id="bar_chart">
-
+                <div class="chart_container">
+                    <canvas id="bar_chart"></canvas>
                 </div>
             </div>
 
@@ -301,8 +301,30 @@
                 </div>
             </div>
         </section>
+
+        <!-- <section class="contents_container" id="trends" aria-hidden="true">
+            <h1>Under Construction</h1>
+        </section>
+
+        <section class="contents_container" id="profile" aria-hidden="true">
+            <h1>Under Construction</h1>
+        </section>
+
+        <section class="contents_container" id="box_to_be_named" aria-hidden="true">
+            <h1>Under Construction</h1>
+        </section>
+
+        <section class="contents_container" id="to_be_named" aria-hidden="true">
+            <h1>Under Construction</h1>
+        </section>
+
+        <section class="contents_container" id="info" aria-hidden="true">
+            <h1>Under Construction</h1>
+        </section> -->
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

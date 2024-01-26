@@ -97,6 +97,7 @@ nav a {
 nav a img {
     width: 1.5rem;
     height: 1.5rem;
+    pointer-events: none;
     filter: brightness(0) saturate(100%) invert(82%) sepia(3%) saturate(361%) hue-rotate(314deg) brightness(87%) contrast(93%);
 }
 
@@ -279,7 +280,8 @@ main .title_section {
     cursor: pointer;
 }
 
-main .main_contents {
+/* dashboard */
+main .dashboard {
     display: grid;
     grid-template-columns: 1fr 14.9375rem 14.9375rem;
     grid-template-rows: repeat(2, auto);
@@ -288,7 +290,7 @@ main .main_contents {
     gap: 1.125rem;
 }
 
-.main_contents .bar_chart_div {
+.dashboard .bar_chart_div {
     grid-area: 1 / 1 / 1 / 2;
     display: block;
     width: 100%;
@@ -306,6 +308,7 @@ main .main_contents {
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
+    /* margin-bottom: 1rem; */
 }
 
 .bar_chart_div .chart_title h2 {
@@ -339,7 +342,13 @@ main .main_contents {
     }
 }
 
-.main_contents .second_child {
+.chart_container {
+    width: 100%;
+    height: calc(85% - 1rem);
+    margin-top: 1rem;
+}
+
+.dashboard .second_child {
     grid-area: 1 / 2 / 1 / 4;
     display: grid;
     width: 100%;
@@ -349,23 +358,23 @@ main .main_contents {
     grid-template-rows: repeat(2, 1fr);
 }
 
-.main_contents .second_child .first {
+.dashboard .second_child .first {
     grid-area: 1 / 1 / 1 / 2;
 }
 
-.main_contents .second_child .second {
+.dashboard .second_child .second {
     grid-area: 1 / 2 / 1 / 3;
 }
 
-.main_contents .second_child .third {
+.dashboard .second_child .third {
     grid-area: 2 / 1 / 2 / 2;
 }
 
-.main_contents .second_child .fourth {
+.dashboard .second_child .fourth {
     grid-area: 2 / 2 / 2 / 3;
 }
 
-.main_contents .second_child .container {
+.dashboard .second_child .container {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
@@ -378,7 +387,7 @@ main .main_contents {
     border: 1px solid #EDF2F7;
 }
 
-.main_contents .second_child .container .child_1 {
+.dashboard .second_child .container .child_1 {
     display: flex;
     width: 100%;
     height: max-content;
@@ -386,7 +395,7 @@ main .main_contents {
     grid-area: 0.5rem;
 }
 
-.main_contents .second_child .container .child_1 .icon {
+.dashboard .second_child .container .child_1 .icon {
     width: 2.5rem;
     height: 2.5rem;
     border: 0.769px solid #DADDDD;
@@ -394,24 +403,24 @@ main .main_contents {
     padding: 0.6rem;
 }
 
-.main_contents .second_child .container .total {
+.dashboard .second_child .container .total {
     width: 100%;
     height: max-content;    
 }
 
-.main_contents .second_child .container .total h4 {
+.dashboard .second_child .container .total h4 {
     font-size: 1.125rem;    
     color: #898989;
     font-weight: 500;
     margin-bottom: 0.3rem;
 }
 
-.main_contents .second_child .container .total p {
+.dashboard .second_child .container .total p {
     font-size: 1.5rem;    
     font-weight: 600;
 }
 
-.main_contents .second_child .container .current_pct {
+.dashboard .second_child .container .current_pct {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -448,7 +457,7 @@ main .main_contents {
     color: #ED544E;
 }
 
-.main_contents .last_order_table {
+.dashboard .last_order_table {
     grid-area: 2 / 1 / 2 / 2;
     display: block;
     width: 100%;
@@ -562,7 +571,7 @@ main .main_contents {
     position: relative;
 }
 
-.main_contents .top_platforms_div {
+.dashboard .top_platforms_div {
     grid-area: 2 / 2 / 2 / 4;
     display: flex;
     flex-direction: column;
@@ -733,3 +742,20 @@ main .main_contents {
     color: #525252;
     font-weight: 400;
 }
+/*  */
+
+/* other nav link pages under construction 😀 */
+/* 
+#trends, 
+#profile, 
+#box_to_be_named,
+#to_be_named,
+#info {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+} */
+
+/*  */
