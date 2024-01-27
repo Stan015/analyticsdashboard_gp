@@ -20,6 +20,13 @@ Given figma design:
 
 I achieved all the goals listed above and more.
 
+## Technologies used:
+
+* Vanilla JavaScript
+* CSS
+* HTML and
+* Chart.js.
+
 I was supper exiting using relative units where necessary for responsivity with the aid of a tool I built recently; [iConvertUnits](https://iconvertunits.vercel.app/).
 
 ## A quick glance at the pixel-perfect code of mine
