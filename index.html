@@ -16,7 +16,7 @@
             <a href="index.html" class="logo" aria-label="logo"><img src="icons/logo.svg" alt="logo"></a>
             <div class="general_navs_div">
                 <nav class="primary_nav">
-                    <a href="index.html" aria-labelledby="dashboard" aria-current="true" class="active_link"><img src="icons/dashboard.svg" alt="dashboard icon" /></a>
+                    <a href="#" aria-labelledby="dashboard" aria-current="true" class="active_link"><img src="icons/dashboard.svg" alt="dashboard icon" /></a>
                     <a href="#trends" aria-labelledby="trend"><img src="icons/trend_up.svg" alt="trend icon" /></a>
                     <a href="#profile" aria-labelledby="user profile"><img src="icons/profile_2user.svg" alt="profile icon" /></a>
                     <a href="#box_to_be_named" aria-labelledby=""><img src="icons/box.svg" alt="box icon" /></a>
@@ -33,6 +33,12 @@
                     <a href="#" aria-labelledby="logout"><img src="icons/logout.svg" alt="logout icon" /></a>
                 </nav>
             </div>
+
+            <div class="burger" aria-label="burger menu">
+                <div class="burger_line"></div>
+                <div class="burger_line"></div>
+                <div class="burger_line"></div>
+            </div>
         </div>
     </header>
 
@@ -41,14 +47,14 @@
             <h1>Dashboard</h1>
 
             <div class="container">
-                <div class="search_div">
+                <div class="search_div white_bg">
                     <img src="icons/search_icon.svg" alt="search icon" />
                     <input type="search" name="search" id="search" placeholder="Search...">
                 </div>
 
                 <div class="date_div">
                     <img src="icons/solar_calendar.svg" alt="calender icon">
-                    <p>January 27, 2024</p>
+                    <p class="todays_date">January 27, 2024</p>
                 </div>
 
                 <img src="icons/solar_bell.svg" alt="bell icon" class="notification_icon">
@@ -65,7 +71,7 @@
         </section>
 
         <section class="contents_container dashboard" id="dashboard" aria-hidden="false">
-            <div class="bar_chart_div">
+            <div class="bar_chart_div white_bg">
                 <div class="chart_title">
                     <h2>Sales Trends</h2>
 
@@ -77,6 +83,8 @@
                             <option value="weekly" selected>Monthly</option>
                             <option value="weekly">Yearly</option>
                         </select>
+
+                        <img class="arrow_down" src="icons/arrow_down2.svg" alt="arrown down icon">
                     </div>
                 </div>
 
@@ -86,7 +94,7 @@
             </div>
 
             <div class="second_child">
-                <div class="total_order container first">
+                <div class="total_order container first white_bg">
                     <div class="child_1">
                         <img class="icon" src="icons/box_tick.svg" alt="box icon">
                         <img src="icons/chart_up.svg" alt="line chart">
@@ -106,7 +114,7 @@
                     </div>
                 </div>
 
-                <div class="total_refund container second">
+                <div class="total_refund container second white_bg">
                     <div class="child_1">
                         <img class="icon" src="icons/3d_rotate.svg" alt="3d rotate icon">
                         <img src="icons/chart_down.svg" alt="line chart">
@@ -126,7 +134,7 @@
                     </div>
                 </div>
 
-                <div class="average_sales container third">
+                <div class="average_sales container third white_bg">
                     <div class="child_1">
                         <img class="icon" src="icons/shopping_cart.svg" alt="shopping cart icon">
                         <img src="icons/chart_down.svg" alt="line chart">
@@ -146,7 +154,7 @@
                     </div>
                 </div>
 
-                <div class="total_income container fourth">
+                <div class="total_income container fourth white_bg">
                     <div class="child_1">
                         <img class="icon" src="icons/coin.svg" alt="coin icon">
                         <img src="icons/chart_up.svg" alt="line chart">
@@ -167,7 +175,7 @@
                 </div>
             </div>
 
-            <table class="last_order_table">
+            <table class="last_order_table white_bg">
                 <thead>
                     <tr>
                         <th>Last Orders</th>
@@ -271,7 +279,7 @@
                 </tbody>
             </table>
 
-            <div class="top_platforms_div">
+            <div class="top_platforms_div white_bg">
                 <div class="first_child">
                     <h4>Top Platform</h4>
                     <a href="#">See All</a>
@@ -302,25 +310,6 @@
             </div>
         </section>
 
-        <!-- <section class="contents_container" id="trends" aria-hidden="true">
-            <h1>Under Construction</h1>
-        </section>
-
-        <section class="contents_container" id="profile" aria-hidden="true">
-            <h1>Under Construction</h1>
-        </section>
-
-        <section class="contents_container" id="box_to_be_named" aria-hidden="true">
-            <h1>Under Construction</h1>
-        </section>
-
-        <section class="contents_container" id="to_be_named" aria-hidden="true">
-            <h1>Under Construction</h1>
-        </section>
-
-        <section class="contents_container" id="info" aria-hidden="true">
-            <h1>Under Construction</h1>
-        </section> -->
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>

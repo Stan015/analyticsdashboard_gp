@@ -125,6 +125,7 @@ nav .theme_color {
     gap: 1rem;
     border-radius: 100vh;
     background-color: #FFFFFF;
+    border: 1px solid #FFFFFF;
     padding: 0.5rem 0;
 }
 
@@ -143,6 +144,7 @@ nav .theme_color {
     width: 1.875rem;
     height: 1.875rem;
     filter: brightness(0) saturate(100%) invert(82%) sepia(3%) saturate(361%) hue-rotate(314deg) brightness(87%) contrast(93%);
+    pointer-events: none;
 }
 
 .theme_color [aria-current="true"] {
@@ -153,6 +155,11 @@ nav .theme_color {
     width: 1.0547rem;
     height: 1.0547rem;
     filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(1%) hue-rotate(62deg) brightness(105%) contrast(102%);
+    pointer-events: none;
+}
+
+.burger {
+    display: none;
 }
 
 main {
@@ -165,6 +172,7 @@ main .title_section {
     height: 5.5rem;
     padding: 1.125rem;
     display: flex;
+    gap: 2rem;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #E5EAEF;
@@ -209,6 +217,7 @@ main .title_section {
     padding: 0 0.5rem;
     font-size: 1rem;
     color: #A3A3A3;
+    background-color: unset;
 
     &:focus {
         outline: none;
@@ -321,6 +330,7 @@ main .dashboard {
     gap: 0.5rem;
     width: max-content;
     align-items: center;
+    position: relative;
 }
 
 .chart_title .sort_chart p {
@@ -332,14 +342,24 @@ main .dashboard {
     color: #3A3F51;
     font-size: 0.75rem;
     width: 6rem;
-    line-height: 2rem;
-    padding: 0.5rem;
+    padding: 0.4rem;
     border-radius: 1.25rem;
     border: 1px solid #E1DFDF;
+    background-color: unset;
+    -webkit-appearance: none;
+    appearance: none;
 
     &:focus {
         outline: none;
     }
+}
+
+.chart_title .sort_chart .arrow_down {
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    pointer-events: none;
+    right: 0.7rem;
 }
 
 .chart_container {
@@ -499,7 +519,7 @@ main .dashboard {
 
 .last_order_table tbody tr {
     display: flex;
-    width: inherit;
+    width: max-content;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
@@ -744,18 +764,406 @@ main .dashboard {
 }
 /*  */
 
-/* other nav link pages under construction 😀 */
-/* 
-#trends, 
-#profile, 
-#box_to_be_named,
-#to_be_named,
-#info {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-} */
+/* responsiveness */
+@media screen and (max-width: 1191px) {
 
+    body {
+        flex-direction: column;
+    }
+
+    header {
+        width: 100%;
+        min-height: 5rem;
+        background-color: unset;
+        border-bottom: 1px solid #EBECF2;
+    }
+
+    header .container {
+        display: flex;
+        flex-direction: row;
+        width: inherit;
+        min-height: inherit;
+        justify-content: space-between;
+        position: relative;
+        padding: 0 1.125rem;
+        border-right: none;
+    }
+
+    .general_navs_div {
+        display: none;
+        flex-direction: column;
+        min-height: calc(100svh - 5rem);
+        gap: 4rem;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        position: absolute;
+        top: 5rem;
+        right: 0;
+        background-color: #F7F8FA;
+        z-index: 3;
+        border-radius: 3rem 0 0 3rem;
+        padding: 2rem 0;
+        border: 1px solid #EBECF2;
+        border-right: none;
+        animation: show_nav 500ms ease-out;
+    }
+
+    .show_header_nav {
+        display: flex !important;
+    }
+
+    @keyframes show_nav {
+        from {
+            transform: translateX(2rem);
+        }
+
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    nav {
+        width: 4rem;
+        gap: 0.7rem;
+    }
+
+    .secondary_nav {
+        flex-direction: row;
+        height: 4rem;
+        width: max-content;
+    }
+
+    nav a {
+        height: 2rem;
+    }
+
+    nav .theme_color {
+        display: flex;
+        flex-direction: row;
+        height: 2.875rem;
+        width: 5.75rem;
+        padding: 0 0.5rem;
+        margin-top: 2rem;
+    }
+
+    /* burger menu */
+    .burger {
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+        width: max-content;
+        gap: 0.4rem;
+        z-index: 2;
+    }
+
+    .burger_line {
+        width: 3rem;
+        height: 0.4rem;
+        background-color: #34CAA5;
+        border-radius: 100vh;
+        transition: all 500ms ease-out;
+    }
+
+    .burger_line1 {
+        transform: rotate(45deg) translateY(0.5rem);
+    }
+
+    .burger_line2 {
+        display: none;
+    }
+
+    .burger_line3 {
+        transform: rotate(-45deg) translateY(-0.5rem);
+    }
+
+    main {
+        display: grid;
+        margin: 0 auto;
+    }
+    
+    main .title_section {
+        display: flex;
+        width: 100%;
+        height: 5rem;
+        padding: 1.125rem;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #E5EAEF;
+    }
+
+    .title_section h1 {
+        font-size: 1rem;
+    }
+    
+    .title_section .container .search_div {
+        display: none;
+        width: 7rem;
+        font-size: 0.8rem;
+    }
+    
+    .title_section .container .search_div input {
+        font-size: 0.7rem;
+    }
+    .title_section .container .date_div {
+        display: none;
+        width: 9rem;
+    }
+
+    .title_section .container .user_div {
+        width: max-content;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .title_section .container .notification_icon {
+        display: none;
+    }
+
+    .title_section .container .user_div .user_name {
+        display: none;
+        position: absolute;
+        top: 3.5rem;
+        right: 1rem;
+        background-color: #FFFFFF;
+        padding: 1rem 2rem;
+        border-radius: 1rem;
+        border: 1px solid #EDF2F7;
+        z-index: 2;
+        transition: all 200ms ease-in;
+    }
+
+    .show_user_name {
+        display: flex !important;
+        transition: all 200ms ease-in;
+    }
+
+    /* dashboard */
+    main .dashboard {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, auto);
+        width: 100%;
+        justify-items: center;
+        justify-self: center;
+    }
+    
+    .dashboard .bar_chart_div {
+        grid-area: 1 / 1 / 1 / 3;
+        width: 100%;
+    }
+
+    .bar_chart_div .chart_title h2 {
+        font-size: 1rem;
+    }
+
+    .chart_title .sort_chart p {
+        font-size: 0.6rem;
+    }
+
+    .chart_title .sort_chart select {
+        font-size: 0.5rem;
+        width: 4.5rem;
+    }
+
+    .chart_container {
+        width: inherit;
+        height: calc(85% - 1rem);
+        margin-top: 1rem;
+        overflow: scroll;
+    }
+
+    .dashboard .second_child {
+        grid-area: 2 / 1 / 2 / 3;
+        grid-template-rows: repeat(2, 1fr);
+        height: max-content;
+        width: 100%;
+        justify-items: center;
+    }
+    
+    .dashboard .second_child .first {
+        grid-area: 1 / 1 / 1 / 3;
+    }
+    
+    .dashboard .second_child .second {
+        grid-area: 2 / 1 / 2 / 3;
+    }
+    
+    .dashboard .second_child .third {
+        grid-area: 3 / 1 / 3 / 3;
+    }
+    
+    .dashboard .second_child .fourth {
+        grid-area: 4 / 1 / 4 / 3;
+    }
+
+    .dashboard .second_child .container .total h4 {
+        font-size: 1rem;    
+    }
+
+    .dashboard .second_child .container .total p {
+        font-size: 1.3rem;    
+    }
+
+    .dashboard .last_order_table {
+        grid-area: 3 / 1 / 3 / 3;
+        width: 100%;
+    }
+
+    .last_order_table thead tr th {
+        font-size: 1rem;
+    }
+
+    .last_order_table tbody {
+        display: block;
+        width: 100%;
+        overflow: scroll;
+    }
+
+    .last_order_table tbody tr th,
+    .last_order_table tbody tr td  {
+        width: 5rem;
+        text-align: left;
+        font-size: 0.8rem;
+        flex-shrink: 0;
+    }
+    
+    .last_order_table tbody tr th:nth-child(1),
+    .last_order_table tbody tr td:nth-child(1) {
+        width: 4rem !important;
+    }
+
+    .last_order_table tbody tr .last_order_name  {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .dashboard .top_platforms_div {
+        grid-area: 4 / 1 / 4 / 3;
+        width: 100%;
+    }
+
+    .top_platforms_div .first_child h4 {
+        font-size: 1rem;
+    }
+    
+    .top_platforms_div .first_child a {
+        font-size: 1rem;
+    }    
+
+    .platforms_container .platform label {
+        font-size: 0.8rem;
+    }
+
+    .platforms_container .platform p {
+        font-size: 0.8rem;
+    }
+    
+}
+
+@media screen and (min-width: 425px) and (max-width: 1190px) {
+    header {
+        display: block;
+    }
+    
+    main .title_section {
+        display: flex;
+    }
+
+    .title_section .container .search_div {
+        display: flex;
+        width: 7rem;
+        font-size: 0.8rem;
+    }
+
+    .title_section .container .date_div {
+        display: flex;
+        width: 9rem;
+    }
+
+    main .dashboard {
+        width: 100%;
+    }
+
+    .dashboard .second_child .first {
+        grid-area: 1 / 1 / 1 / 2;
+    }
+    
+    .dashboard .second_child .second {
+        grid-area: 1 / 2 / 1 / 3;
+    }
+    
+    .dashboard .second_child .third {
+        grid-area: 2 / 1 / 2 / 2;
+    }
+    
+    .dashboard .second_child .fourth {
+        grid-area: 2 / 2 / 2 / 3;
+    }
+    
+    .dashboard .last_order_table {
+        width: 100%;
+        height: 100%;
+    }
+
+    .title_section .container .search_div {
+        width: 13rem;
+    }
+    .title_section .container .date_div {
+        width: 10rem;
+    }
+    
+}
+
+@media screen and (min-width: 425px) and (max-width: 940px) {
+    .title_section .container .search_div {
+        width: 10rem;
+    }
+
+    .title_section .container .date_div {
+        display: none;
+        width: 9rem;
+    }    
+
+    .title_section .container .user_div .user_name {
+        top: 3.5rem;
+        right: 1rem;
+    }
+}
+
+@media screen and (min-width: 523px) {
+    .last_order_table tbody tr {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 940px) and (max-width: 1190px) {
+
+    .title_section .container .search_div {
+        width: 12rem;
+    }
+    
+    .title_section .container .date_div {
+        width: 9rem;
+    }
+    .title_section .container .notification_icon {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1190px) and (max-width: 1234px) {
+    main .dashboard {
+        width: 100%;
+        grid-template-columns: 35rem 14.9375rem 14.9375rem;
+        /* justify-content: center; */
+    }
+}
+
+@media screen and (min-width: 1234px) and (max-width: 1300px) {
+    main .dashboard {
+        width: 100%;
+        grid-template-columns: 38rem 14.9375rem 14.9375rem;
+        /* justify-content: center; */
+    }
+}
 /*  */
