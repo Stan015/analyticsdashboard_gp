@@ -67,7 +67,6 @@ displayCurrentDate.innerText = formattedDate;
 //toggle user profile name to show/hide on specified media query
 const userHeaderProfile = document.querySelector('.title_section .user_div');
 const userNameDetail = document.querySelector('.user_div .user_name');
-const userNameDetailParagraph = document.querySelector('.user_div .user_name p');
 
 function toggleUserDetails() {
     userHeaderProfile.addEventListener('click', (e) => {
@@ -206,7 +205,7 @@ themeColorButtons.forEach(themeColorButton => {
                 whiteBgElement.style.backgroundColor = '#FFFFFF';
             });
             themeColorContainer.style.backgroundColor = '#FFFFFF';
-            userNameDetailParagraph.style.color = '#26282C';
+            userNameDetail.style.backgroundColor = '#FFFFFF';
 
         } 
         
@@ -223,7 +222,7 @@ themeColorButtons.forEach(themeColorButton => {
                 whiteBgElement.style.backgroundColor = '#092544'
             });
             themeColorContainer.style.backgroundColor = '#092544';
-            userNameDetailParagraph.style.color = '#092544';
+            userNameDetail.style.backgroundColor = '#092544';
         } 
     })
 });
